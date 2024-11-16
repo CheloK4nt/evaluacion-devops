@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "9090:9090"
+      - "50000:50000" # Puerto para agentes
+    environment:
+      - JENKINS_OPTS=--httpPort=9090 # Configura Jenkins para usar el puerto 9090
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+
+  evaluacion-devops:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Puerto 8080 para evaluacion-devops
+    restart: always
+
+volumes:
+  jenkins_home:

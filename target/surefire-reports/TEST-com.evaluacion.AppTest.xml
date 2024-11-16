@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.evaluacion.AppTest" time="0.027" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="A:\Documentos\Proyectos\evaluacion-devops\target\test-classes;A:\Documentos\Proyectos\evaluacion-devops\target\classes;C:\Users\chelo\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Santiago"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="ES"/>
+    <property name="sun.boot.library.path" value="A:\Programas\jdk-23.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\chelo\AppData\Local\Temp\surefire7958317772899754883\surefirebooter-20241116121020774_3.jar C:\Users\chelo\AppData\Local\Temp\surefire7958317772899754883 2024-11-16T12-10-20_693-jvmRun1 surefire-20241116121020774_1tmp surefire_0-20241116121020774_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="A:\Documentos\Proyectos\evaluacion-devops\target\test-classes;A:\Documentos\Proyectos\evaluacion-devops\target\classes;C:\Users\chelo\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\chelo"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="A:\Programas\jdk-23.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="A:\Documentos\Proyectos\evaluacion-devops"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\chelo\AppData\Local\Temp\surefire7958317772899754883\surefirebooter-20241116121020774_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="23.0.1+11-39"/>
+    <property name="user.name" value="chelo"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\chelo\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\chelo\AppData\Local\Temp\"/>
+    <property name="java.version" value="23.0.1"/>
+    <property name="user.dir" value="A:\Documentos\Proyectos\evaluacion-devops"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="A:\Programas\jdk-23.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;A:\Programas\Git\cmd;A:\Programas\Git\bin;C:\Program Files\Docker\Docker\resources\bin;A:\Programas\Python2.7;C:\Users\chelo\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\dotnet\;A:\Programas\jdk-23.0.1\bin;A:\Programas\apache-maven-3.9.9\bin;C:\Users\chelo\AppData\Local\Programs\Python\Launcher\;C:\Users\chelo\AppData\Local\Microsoft\WindowsApps;A:\Programas\Microsoft VS Code\bin;C:\Users\chelo\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\chelo\AppData\Roaming\npm;C:\Users\chelo\AppData\Roaming\nvm;C:\Program Files\nodejs;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23.0.1+11-39"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="testApp" classname="com.evaluacion.AppTest" time="0.002"/>
+</testsuite>
