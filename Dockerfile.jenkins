@@ -1,17 +1,20 @@
 # Usar Jenkins como imagen base
 FROM jenkins/jenkins:lts
 
-# Cambiar al usuario root para instalar paquetes
+# Cambiar al usuario root para instalar Maven y configurar Java 17
 USER root
 
-# Instalar Maven y Java 23 desde Liberica
+# Instalar Maven y wget
 RUN apt-get update && \
     apt-get install -y maven wget && \
-    wget https://download.bell-sw.com/java/23.0.1+10/bellsoft-jdk23.0.1-linux-amd64.tar.gz && \
-    tar -xvf bellsoft-jdk23.0.1-linux-amd64.tar.gz -C /opt && \
-    update-alternatives --install /usr/bin/java java /opt/jdk-23/bin/java 1 && \
-    update-alternatives --set java /opt/jdk-23/bin/java && \
     apt-get clean
+
+# Configurar OpenJDK 17 como la versión de Java
+RUN wget https://download.java.net/java/GA/jdk17/17.0.8.1/GPL/openjdk-17.0.8.1_linux-x64_bin.tar.gz && \
+    tar -xvf openjdk-17.0.8.1_linux-x64_bin.tar.gz -C /opt && \
+    update-alternatives --install /usr/bin/java java /opt/jdk-17.0.8.1/bin/java 1 && \
+    update-alternatives --set java /opt/jdk-17.0.8.1/bin/java && \
+    rm openjdk-17.0.8.1_linux-x64_bin.tar.gz
 
 # Cambiar nuevamente al usuario Jenkins
 USER jenkins

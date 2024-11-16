@@ -1,5 +1,5 @@
-# Usar OpenJDK 23 como imagen base
-FROM openjdk:23-jdk
+# Usar OpenJDK 17 como imagen base
+FROM openjdk:17-jdk
 
 # Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
@@ -10,5 +10,5 @@ COPY target/evaluacion-devops-1.0-SNAPSHOT.jar /app/evaluacion-devops.jar
 # Definir el comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "/app/evaluacion-devops.jar"]
 
-# Exponer el puerto 8080 (puedes cambiarlo si es necesario)
+# Exponer el puerto 8080
 EXPOSE 8080
