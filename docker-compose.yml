@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   jenkins:
     build:
@@ -12,15 +13,19 @@ services:
       - JENKINS_OPTS=--httpPort=9090
     volumes:
       - jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock # Montar el socket Docker del host
+    user: root # Ejecutar como root para evitar problemas de permisos
     restart: always
 
   evaluacion-devops:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: evaluacion-devops
     ports:
       - "8080:8080"
+    depends_on:
+      - jenkins # Asegurar que Jenkins se levante antes si hay alguna dependencia
     restart: always
 
 volumes:

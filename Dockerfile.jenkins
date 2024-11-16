@@ -22,8 +22,5 @@ RUN java -version && mvn -version
 RUN groupadd -g 999 docker || true && \
     usermod -aG docker jenkins
 
-# Dar permisos al socket de Docker (solo para desarrollo, no recomendado en producción)
-RUN chmod 666 /var/run/docker.sock
-
 # Cambiar nuevamente al usuario Jenkins
 USER jenkins
