@@ -4,9 +4,13 @@ FROM jenkins/jenkins:lts
 # Cambiar al usuario root para instalar paquetes
 USER root
 
-# Instalar Maven
+# Instalar Maven y Java 23 desde Liberica
 RUN apt-get update && \
-    apt-get install -y maven && \
+    apt-get install -y maven wget && \
+    wget https://download.bell-sw.com/java/23.0.1+10/bellsoft-jdk23.0.1-linux-amd64.tar.gz && \
+    tar -xvf bellsoft-jdk23.0.1-linux-amd64.tar.gz -C /opt && \
+    update-alternatives --install /usr/bin/java java /opt/jdk-23/bin/java 1 && \
+    update-alternatives --set java /opt/jdk-23/bin/java && \
     apt-get clean
 
 # Cambiar nuevamente al usuario Jenkins
