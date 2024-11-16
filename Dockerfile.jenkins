@@ -5,7 +5,6 @@ FROM jenkins/jenkins:lts
 USER root
 
 # Instalar Docker CLI
-USER root
 RUN apt-get update && apt-get install -y docker.io
 
 # Instalar Maven y OpenJDK 17 directamente desde los repositorios
@@ -18,6 +17,13 @@ RUN update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
 
 # Verificar instalación de Java y Maven
 RUN java -version && mvn -version
+
+# Crear el grupo docker si no existe y añadir al usuario Jenkins
+RUN groupadd -g 999 docker || true && \
+    usermod -aG docker jenkins
+
+# Dar permisos al socket de Docker (solo para desarrollo, no recomendado en producción)
+RUN chmod 666 /var/run/docker.sock
 
 # Cambiar nuevamente al usuario Jenkins
 USER jenkins
