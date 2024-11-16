@@ -1,0 +1,13 @@
+# Usar Jenkins como imagen base
+FROM jenkins/jenkins:lts
+
+# Cambiar al usuario root para instalar paquetes
+USER root
+
+# Instalar Maven
+RUN apt-get update && \
+    apt-get install -y maven && \
+    apt-get clean
+
+# Cambiar nuevamente al usuario Jenkins
+USER jenkins
