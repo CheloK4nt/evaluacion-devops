@@ -4,6 +4,10 @@ FROM jenkins/jenkins:lts
 # Cambiar al usuario root para instalar paquetes necesarios
 USER root
 
+# Instalar Docker CLI
+USER root
+RUN apt-get update && apt-get install -y docker.io
+
 # Instalar Maven y OpenJDK 17 directamente desde los repositorios
 RUN apt-get update && \
     apt-get install -y maven openjdk-17-jdk && \
