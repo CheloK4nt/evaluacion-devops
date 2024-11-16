@@ -1,20 +1,19 @@
 # Usar Jenkins como imagen base
 FROM jenkins/jenkins:lts
 
-# Cambiar al usuario root para instalar Maven y configurar Java 17
+# Cambiar al usuario root para instalar paquetes necesarios
 USER root
 
-# Instalar Maven y wget
+# Instalar Maven y OpenJDK 17 directamente desde los repositorios
 RUN apt-get update && \
-    apt-get install -y maven wget && \
+    apt-get install -y maven openjdk-17-jdk && \
     apt-get clean
 
-# Configurar OpenJDK 17 como la versión de Java
-RUN wget https://download.java.net/java/GA/jdk17/17.0.8.1/GPL/openjdk-17.0.8.1_linux-x64_bin.tar.gz && \
-    tar -xvf openjdk-17.0.8.1_linux-x64_bin.tar.gz -C /opt && \
-    update-alternatives --install /usr/bin/java java /opt/jdk-17.0.8.1/bin/java 1 && \
-    update-alternatives --set java /opt/jdk-17.0.8.1/bin/java && \
-    rm openjdk-17.0.8.1_linux-x64_bin.tar.gz
+# Configurar OpenJDK 17 como la versión predeterminada de Java
+RUN update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+
+# Verificar instalación de Java y Maven
+RUN java -version && mvn -version
 
 # Cambiar nuevamente al usuario Jenkins
 USER jenkins
